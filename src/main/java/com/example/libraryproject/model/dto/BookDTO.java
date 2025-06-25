@@ -1,13 +1,13 @@
-package com.example.libraryproject.model;
+package com.example.libraryproject.model.dto;
 
-public class Book {
+public class BookDTO {
     private int id;
     private String title;
     private String author;
 
-    public Book() {}
+    public BookDTO() {}
 
-    public Book(int id, String title, String author) {
+    public BookDTO(int id, String title, String author) {
         this.id = id;
         this.title = title;
         this.author = author;
