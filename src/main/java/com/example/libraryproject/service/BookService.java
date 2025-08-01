@@ -1,26 +1,21 @@
 package com.example.libraryproject.service;
 
+import com.example.libraryproject.dao.BookRepository;
 import com.example.libraryproject.model.dto.BookDTO;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-
+@AllArgsConstructor
 @Service
 public class BookService {
+    private final BookRepository repository;
 
-    private final List<BookDTO> books = new ArrayList<>();
 
-    public void addBook(BookDTO book) {
-        books.add(book);
+    public BookDTO addBook(BookDTO book) {
+        return repository.save(book);
     }
 
     public BookDTO getBookById(int id) {
-        Optional<BookDTO> found = books.stream()
-                .filter(book -> book.getId() == id)
-                .findFirst();
-
-        return found.orElse(null);
+        return repository.getBookById(id);
     }
 }
