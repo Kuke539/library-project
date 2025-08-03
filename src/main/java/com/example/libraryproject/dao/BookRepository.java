@@ -23,5 +23,13 @@ public class BookRepository {
     public BookDTO getBookById(int id) {
         return database.get(id);
     }
+    public BookDTO updateBook(BookDTO book) {
+        database.put(book.getId(), book);
+        return book;
+    }
+    public BookDTO deleteBook(BookDTO book) {
+        database.remove(book.getId());
+        return book;
+    }
 }
 

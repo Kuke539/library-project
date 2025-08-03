@@ -18,4 +18,10 @@ public class BookService {
     public BookDTO getBookById(int id) {
         return repository.getBookById(id);
     }
+    public  BookDTO updateBook(BookDTO book) {
+        return repository.save(book);
+    }
+     public  BookDTO deleteBook(int id) {
+        return repository.getBookById(id);
+     }
 }
