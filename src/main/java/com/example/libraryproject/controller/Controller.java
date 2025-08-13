@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.awt.print.Book;
-
 @RestController
 @RequestMapping("/books")
 @AllArgsConstructor
@@ -31,12 +29,11 @@ public class Controller {
     public BookDTO showBook(@PathVariable int id) {
         return service.getBookById(id);
     }
-    @PutMapping
+    @PutMapping("/{id}")
     public BookDTO updateBook(@RequestBody BookDTO book) {
         return service.updateBook(book);
     }
-    @DeleteMapping
-    public void deleteBook(@RequestBody BookDTO book) {
-        return service.deleteBook(id);
+    @DeleteMapping("/{id}")
+    public void deleteBook(@PathVariable int id) {
+        service.deleteBook(id);
     }
-}

@@ -21,7 +21,7 @@ public class BookService {
     public  BookDTO updateBook(BookDTO book) {
         return repository.save(book);
     }
-     public  BookDTO deleteBook(int id) {
-        return repository.getBookById(id);
+     public void deleteBook(int id) {
+         repository.deleteBook(id);
      }
 }

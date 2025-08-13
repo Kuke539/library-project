@@ -27,9 +27,8 @@ public class BookRepository {
         database.put(book.getId(), book);
         return book;
     }
-    public BookDTO deleteBook(BookDTO book) {
-        database.remove(book.getId());
-        return book;
+    public void deleteBook(int id) {
+        database.remove(id);
     }
 }
 
